@@ -1,0 +1,111 @@
+<!doctype html>  
+<html lang="en">
+  
+  <head>
+    <meta charset="utf-8">
+    <title>Massimo Di Pierro</title>    
+    <meta name="description" content="">
+    <meta name="author" content="Massimo Di Pierro">    
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/reset.css" type="text/css">
+    <link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/main.css" type="text/css">
+    <link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/print.css" type="text/css" media="print">
+    <link rel="stylesheet" href="http://lab.hakim.se/reveal-js/lib/zenburn.css" type="text/css">
+  </head>
+  
+  <body>
+    
+    <div id="reveal">
+      
+      <!-- Used to fade in a background when a specific slide state is reached -->
+      <div class="state-background"></div>
+      
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+	<section><h1>title</h1><h3>author</h3></section><section><h2>Overview</h2><ul><li>Make a file <code class="">test.mm</code> using markmin syntax explained below.</li><li>Run: <code class="">libs/make.py test.mm &gt; test.html</code></li><li>open <code class="">test.html</code></li></ul></section><section><h2>Syntax example</h2><pre><code class="">**bold**
+''italic''
+-----
+quote
+-----
+[[link http://google.com]]</code></pre><p>renders as</p><p><strong>bold</strong>
+<em>italic</em>
+<blockquote class="">quote</blockquote>
+<a href="http://google.com">link</a></p></section><section><h2>Embedding images</h2><pre><code class="">[[image http://bit.ly/KYqon8 center 200px]]</code></pre><p>renders as</p><p><p align="center"><img src="http://bit.ly/KYqon8" alt="image" width="200px" /></p></p></section><section><h2>Embedding code</h2><pre><code class="">``
+def index():
+    print 'hello world'
+``</code></pre><p>renders as</p><pre><code class="">def index():
+    print 'hello world'</code></pre></section><section><h2>Embedding Latex Formulas</h2><pre><code class="">\[ \int_a^b sin(x) dx \]</code></pre><p>renders as</p><p>\[ \int_a^b sin(x) dx \]</p><p>Use <code class="">\(...\)</code> for inline formulas.</p></section><section><h2>Embedding videos</h2><pre><code class="">``&lt;iframe src="http://player.vimeo.com/video/25242353" width="400" height="250" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen&gt;&lt;/iframe&gt;``:html</code></pre><p>renders as</p><iframe src="http://player.vimeo.com/video/25242353" width="400" height="250" frameborder="0" webkitA\
+llowFullScreen mozallowfullscreen allowFullScreen></iframe></section>
+
+      </div>
+      
+      <!-- The navigational controls UI -->
+      <aside class="controls">
+	<a class="left" href="#">&#x25C4;</a>
+	<a class="right" href="#">&#x25BA;</a>
+	<a class="up" href="#">&#x25B2;</a>
+	<a class="down" href="#">&#x25BC;</a>
+      </aside>
+      
+      <!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+      <div class="progress"><span></span></div>
+      
+    </div>
+    
+    <script src="http://lab.hakim.se/reveal-js/js/reveal.js"></script>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+    
+    <!-- Optional libraries for code syntax highlighting and classList support in IE9 -->
+    <script src="http://lab.hakim.se/reveal-js/lib/highlight.js"></script>
+    <script src="http://lab.hakim.se/reveal-js/lib/classList.js"></script>
+    
+    <script>
+      // Parse the query string into a key/value object
+      var query = {};
+      location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
+        query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
+      } );
+
+      // Fires when a slide with data-state=customevent is activated
+      Reveal.addEventListener( 'customevent', function() {
+        alert( '"customevent" has fired' );
+      } );
+
+      // Fires each time a new slide is activated
+      Reveal.addEventListener( 'slidechanged', function( event ) {
+        // event.indexh & event.indexv
+      } );
+
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+      
+        // Display a presentation progress bar
+        progress: true,
+
+        // If true; each slide will be pushed to the browser history
+        history: true,
+      
+        // Loops the presentation, defaults to false
+        loop: false,
+
+        // Flags if mouse wheel navigation should be enabled
+        mouseWheel: true,
+
+        // Apply a 3D roll to links on hover
+        rollingLinks: true,
+
+        // UI style
+        theme: query.theme || 'default', // default/neon
+
+        // Transition style
+        transition: query.transition || 'default' // default/cube/page/concave/linear(2d)
+      });
+      
+      hljs.initHighlightingOnLoad();
+    </script>
+  </body>
+</html>
+
