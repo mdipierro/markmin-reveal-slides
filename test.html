@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/print.css" type="text/css" media="print">
     <link rel="stylesheet" href="http://lab.hakim.se/reveal-js/lib/zenburn.css" type="text/css">
     <style>
+    blockquote { text-align: left }
     #reveal blockquote:before { content: ''; }
     #reveal blockquote:after { content: ''; }
     table { width:100%; padding-left: 20%; padding-right: 20%; }
@@ -69,6 +70,8 @@ llowFullScreen mozallowfullscreen allowFullScreen></iframe></section><section><h
     <!-- Optional libraries for code syntax highlighting and classList support in IE9 -->
     <script src="http://lab.hakim.se/reveal-js/lib/highlight.js"></script>
     <script src="http://lab.hakim.se/reveal-js/lib/classList.js"></script>
+    <!-- script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script -->
+    <!-- script src="https://raw.github.com/jaz303/jquery-grab-bag/master/javascripts/jquery.text-effects.js"></script -->
     
     <script>
       // Parse the query string into a key/value object
@@ -77,14 +80,10 @@ llowFullScreen mozallowfullscreen allowFullScreen></iframe></section><section><h
         query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
       } );
 
-      // Fires when a slide with data-state=customevent is activated
-      Reveal.addEventListener( 'customevent', function() {
-        alert( '"customevent" has fired' );
-      } );
-
       // Fires each time a new slide is activated
       Reveal.addEventListener( 'slidechanged', function( event ) {
         // event.indexh & event.indexv
+        // jQuery(".present .typewriter").append(' ').typewriter();
       } );
 
       Reveal.initialize({

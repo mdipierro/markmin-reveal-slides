@@ -16,6 +16,7 @@ FRAME = """<!doctype html>
     <link rel="stylesheet" href="{{=reveal}}/css/print.css" type="text/css" media="print">
     <link rel="stylesheet" href="{{=reveal}}/lib/zenburn.css" type="text/css">
     <style>
+    blockquote { text-align: left }
     #reveal blockquote:before { content: ''; }
     #reveal blockquote:after { content: ''; }
     table { width:100%; padding-left: 20%; padding-right: 20%; }
@@ -55,6 +56,8 @@ FRAME = """<!doctype html>
     <!-- Optional libraries for code syntax highlighting and classList support in IE9 -->
     <script src="{{=reveal}}/lib/highlight.js"></script>
     <script src="{{=reveal}}/lib/classList.js"></script>
+    <!-- script src="{{=jquery}}"></script -->
+    <!-- script src="{{=jquery.text-effects}}"></script -->
     
     <script>
       // Parse the query string into a key/value object
@@ -63,14 +66,10 @@ FRAME = """<!doctype html>
         query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
       } );
 
-      // Fires when a slide with data-state=customevent is activated
-      Reveal.addEventListener( 'customevent', function() {
-        alert( '"customevent" has fired' );
-      } );
-
       // Fires each time a new slide is activated
       Reveal.addEventListener( 'slidechanged', function( event ) {
         // event.indexh & event.indexv
+        // jQuery(".present .typewriter").append(' ').typewriter();
       } );
 
       Reveal.initialize({
@@ -114,10 +113,17 @@ def make(text,local=False):
     if local:
         frame = frame.replace('{{=reveal}}','reveal')
         frame = frame.replace('{{=mathjax}}','mathjax')
+        frame = frame.replace('{{=jquery}}','otherjs/jquery.js')
+        frame = frame.replace('{{=jquery.text-effects}}','otherjs/jquery.text-effects.js')
     else:
         frame = frame.replace('{{=reveal}}','http://lab.hakim.se/reveal-js')
-        frame = frame.replace('{{=mathjax}}','http://cdn.mathjax.org/mathjax/latest')        
+        frame = frame.replace('{{=mathjax}}','http://cdn.mathjax.org/mathjax/latest')
+        frame = frame.replace('{{=jquery}}',
+           'http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
+        frame = frame.replace('{{=jquery.text-effects}}',
+           'https://raw.github.com/jaz303/jquery-grab-bag/master/javascripts/jquery.text-effects.js')        
     return frame.replace('{{include}}',html)
+
 
 if __name__=='__main__':
     print make(open(sys.argv[1]).read())
