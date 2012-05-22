@@ -76,3 +76,21 @@ renders as
 
 ``<iframe src="http://player.vimeo.com/video/25242353" width="400" height="250" frameborder="0" webkitA\
 llowFullScreen mozallowfullscreen allowFullScreen></iframe>``:html
+
+## Embedding a table
+
+``
+---------
+X | 0 | 0
+0 | X | 0
+0 | 0 | X
+---------
+``
+
+renders as:
+
+---------
+X | 0 | 0
+0 | X | 0
+0 | 0 |	X
+---------
