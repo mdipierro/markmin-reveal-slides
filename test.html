@@ -15,6 +15,7 @@
     <style>
     #reveal blockquote:before { content: ''; }
     #reveal blockquote:after { content: ''; }
+    table { width:100%; padding-left: 20%; padding-right: 20%; }
     </style>
   </head>
   
@@ -41,11 +42,11 @@ def index():
     print 'hello world'
 ``</code></pre><p>renders as</p><pre><code class="">def index():
     print 'hello world'</code></pre></section><section><h2>Embedding Latex Formulas</h2><pre><code class="">\[ \int_a^b sin(x) dx \]</code></pre><p>renders as</p><p>\[ \int_a^b sin(x) dx \]</p><p>Use <code class="">\(...\)</code> for inline formulas.</p></section><section><h2>Embedding videos</h2><pre><code class="">``&lt;iframe src="http://player.vimeo.com/video/25242353" width="400" height="250" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen&gt;&lt;/iframe&gt;``:html</code></pre><p>renders as</p><iframe src="http://player.vimeo.com/video/25242353" width="400" height="250" frameborder="0" webkitA\
-llowFullScreen mozallowfullscreen allowFullScreen></iframe></section><section><h2>Embedding a table</h2><pre><code class="">---------
-X | 0 | 0
-0 | X | 0
-0 | 0 | X
----------</code></pre><p>renders as:</p><table class=""><tr><td>X</td><td>0</td><td>0</td></tr><tr><td>0</td><td>X</td><td>0</td></tr><tr><td>0</td><td>0 |	X</td></tr></table></section>
+llowFullScreen mozallowfullscreen allowFullScreen></iframe></section><section><h2>Embedding a table</h2><pre><code class="">------------------------------------
+**test** | 0        | 0
+0        | ''test'' | 0
+0        | 0        | \( x^{x^x} \)
+------------------------------------</code></pre><p>renders as:</p><table class=""><tr><td><strong>test</strong></td><td>0       </td><td>0</td></tr><tr><td>0       </td><td><em>test</em></td><td>0</td></tr><tr><td>0       </td><td>0       </td><td>\( x^{x^x} \)</td></tr></table></section>
 
       </div>
       

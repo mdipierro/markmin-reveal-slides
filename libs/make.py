@@ -18,6 +18,7 @@ FRAME = """<!doctype html>
     <style>
     #reveal blockquote:before { content: ''; }
     #reveal blockquote:after { content: ''; }
+    table { width:100%; padding-left: 20%; padding-right: 20%; }
     </style>
   </head>
   
