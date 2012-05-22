@@ -15,6 +15,10 @@ FRAME = """<!doctype html>
     <link rel="stylesheet" href="{{=reveal}}/css/main.css" type="text/css">
     <link rel="stylesheet" href="{{=reveal}}/css/print.css" type="text/css" media="print">
     <link rel="stylesheet" href="{{=reveal}}/lib/zenburn.css" type="text/css">
+    <style>
+    #reveal blockquote:before { content: ''; }
+    #reveal blockquote:after { content: ''; }
+    </style>
   </head>
   
   <body>
