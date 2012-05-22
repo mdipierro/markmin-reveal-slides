@@ -16,7 +16,9 @@ FRAME = """<!doctype html>
     <link rel="stylesheet" href="{{=reveal}}/css/print.css" type="text/css" media="print">
     <link rel="stylesheet" href="{{=reveal}}/lib/zenburn.css" type="text/css">
     <style>
-    blockquote { text-align: left }
+    h1, h2, h3, h4 { color: #ddf; }
+    strong, b {color: #ffc;}
+    blockquote { text-align: left; color: #fdd; }
     #reveal blockquote:before { content: ''; }
     #reveal blockquote:after { content: ''; }
     table { width:100%; padding-left: 20%; padding-right: 20%; }
